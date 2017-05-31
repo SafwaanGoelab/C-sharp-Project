@@ -16,7 +16,17 @@
     DataColumn dcTime = new DataColumn("time");
     DataColumn dcFile = new DataColumn("file");
 
+
+
+    ds.Tables.Add(dtSongs);
+    dtSongs.Columns.Add(dcId);
+    dtSongs.Columns.Add(dcArtist);
+    dtSongs.Columns.Add(dcTitle);
+    dtSongs.Columns.Add(dcYear);
+    dtSongs.Columns.Add(dcGenre);
+    dtSongs.Columns.Add(dcTime);
+    dtSongs.Columns.Add(dcFile);
 }
 
 <h2>Index</h2>
-
+    
