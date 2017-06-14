@@ -4,6 +4,30 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    DataSet ds = Session["xmlDataSet"] as DataSet;
+    if(IsPost)
+    {
+        DataSet ds = Session["xmlDataSet"] as DataSet;
+
+        DataRow dr = dr.Tables[0].NewRow();
+
+
+        dr["id"] = Request.Form["id"];
+        dr["artist"] = Request.Form["artist"];
+        dr["title"] = Request.Form["title"];
+        dr["year"] = Request.Form["year"];
+        dr["genre"] = Request.Form["genre"];
+        dr["file"] = Request.Form["file"];
+
+        ds.Tables[0].Rows.Add(dr);
+
+        ds.WriteXml(Server.MapPath(@"..\App_Data\playlist.xml"));
+
+    }
 
 }
+
+<form method="post">
+    <table>
+        <td>Songnaam</td>
+    </table>
+</form>
