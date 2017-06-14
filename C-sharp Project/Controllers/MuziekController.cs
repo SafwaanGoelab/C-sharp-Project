@@ -13,9 +13,9 @@ namespace C_sharp_Project.Controllers
         {
             return View();
         }
-        public Action Create()
+        public ActionResult Create()
         {
-
+            return View();
         }
     }
 }

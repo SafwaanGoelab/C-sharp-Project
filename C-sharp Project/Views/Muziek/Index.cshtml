@@ -1,5 +1,4 @@
-﻿
-@using System.Data;
+﻿@using System.Data;
 
 @{
     ViewBag.Title = "Index";
@@ -26,26 +25,27 @@
     dtSongs.Columns.Add(dcGenre);
     dtSongs.Columns.Add(dcTime);
     dtSongs.Columns.Add(dcFile);
+
+    ds.ReadXml(Server.MapPath(@"..\App_Data\XMLFile1.xml"));
+
+    Session["xmlDataSet"] = ds;
 }
-ds.ReadXml(Server.MapPath(@"..\App_Data\XMLFile1.xml));
+
 
 @foreach (DataRow dr in ds.Tables[0].Rows)
-{}
+{ }
 
 
 <table>
     @foreach (DataRow dr in ds.Tables[0].Rows)
     {
-    <tr>
-    <td>@dr["title"]</td>
-    <td>@dr["artist"]</td>
-    <td>@dr["category"]</td>
-    <td>@dr["duration"]</td>
-    <td>@dr["published"]</td>
-    </tr>
+        <tr>
+            <td>@dr["title"]</td>
+            <td>@dr["artist"]</td>
+            <td>@dr["category"]</td>
+            <td>@dr["duration"]</td>
+            <td>@dr["published"]</td>
+        </tr>
     }
 </table>
 <h2>Index</h2>
-
-Session ["xmlDataSet"]    = ds;
-
