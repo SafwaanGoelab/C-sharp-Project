@@ -3,16 +3,15 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    DataSet ds = new DataSet("playlist");
+    DataSet ds = new DataSet("music");
 
-    DataTable dtSongs = new DataTable("song");
+    DataTable dtSongs = new DataTable("number");
 
     DataColumn dcId = new DataColumn("id");
     DataColumn dcArtist = new DataColumn("artist");
     DataColumn dcTitle = new DataColumn("title");
     DataColumn dcYear = new DataColumn("year");
     DataColumn dcGenre = new DataColumn("genre");
-    DataColumn dcTime = new DataColumn("time");
     DataColumn dcFile = new DataColumn("file");
 
 
@@ -23,28 +22,23 @@
     dtSongs.Columns.Add(dcTitle);
     dtSongs.Columns.Add(dcYear);
     dtSongs.Columns.Add(dcGenre);
-    dtSongs.Columns.Add(dcTime);
     dtSongs.Columns.Add(dcFile);
 
-    ds.ReadXml(Server.MapPath(@"..\App_Data\XMLFile1.xml"));
+    ds.ReadXml(Server.MapPath(@"~/App_Data\XMLFile1.xml"));
 
     Session["xmlDataSet"] = ds;
 }
-
-
-@foreach (DataRow dr in ds.Tables[0].Rows)
-{ }
-
 
 <table>
     @foreach (DataRow dr in ds.Tables[0].Rows)
     {
         <tr>
-            <td>@dr["title"]</td>
+            <td>@dr["id"]</td>
             <td>@dr["artist"]</td>
-            <td>@dr["category"]</td>
-            <td>@dr["duration"]</td>
-            <td>@dr["published"]</td>
+            <td>@dr["title"]</td>
+            <td>@dr["year"]</td>
+            <td>@dr["genre"]</td>
+            <td>@dr["file"]</td>
         </tr>
     }
 </table>

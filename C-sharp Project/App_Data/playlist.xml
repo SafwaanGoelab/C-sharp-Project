@@ -17,11 +17,11 @@
     <file />
   </number>
   <number>
-    <id>A</id>
-    <artist>B</artist>
-    <title>B</title>
-    <year>B</year>
-    <genre>B</genre>
-    <file />
+    <id>a</id>
+    <artist>b</artist>
+    <title>c</title>
+    <year>d</year>
+    <genre>e</genre>
+    <file>f</file>
   </number>
 </music>

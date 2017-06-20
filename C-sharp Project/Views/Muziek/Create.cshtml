@@ -8,7 +8,7 @@
     {
         DataSet ds = Session["xmlDataSet"] as DataSet;
 
-        DataRow dr = dr.Tables[0].NewRow();
+            DataRow dr = ds.Tables[0].NewRow();
 
 
         dr["id"] = Request.Form["id"];
@@ -20,7 +20,8 @@
 
         ds.Tables[0].Rows.Add(dr);
 
-        ds.WriteXml(Server.MapPath(@"..\App_Data\playlist.xml"));
+        ds.WriteXml(Server.MapPath(@"..\App_Data\XMLFile1.xml"));
+        //string waarde = Request.Form["naamInputVanElement"].ToString();
 
     }
 
@@ -28,6 +29,30 @@
 
 <form method="post">
     <table>
-        <td>Songnaam</td>
+        <tr>
+        <td>id</td>
+            <td><input type="text" name="id" /></td>
+         </tr>
+        <tr>
+        <td>artist</td>
+            <td><input type="text" name="artist" /></td>
+
+        </tr>
+        <td>title</td>
+        <td><input type="text" name="title" /></td>
+
+        </tr>
+        <td>year</td>
+        <td><input type="text" name="year" /></td>
+
+        </tr>
+        <td>genre</td>
+        <td><input type="text" name="genre" /></td>
+        </tr>
+        <td>file</td>
+        <td><input type="text" name="file" /></td>
+        </tr>
+        <td><input type="submit" /></td>
+
     </table>
 </form>
