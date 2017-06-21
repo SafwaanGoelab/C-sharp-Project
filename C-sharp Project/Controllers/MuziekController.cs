@@ -17,5 +17,9 @@ namespace C_sharp_Project.Controllers
         {
             return View();
         }
+        public ActionResult Delete()
+        {
+            return View();
+        }
     }
 }
