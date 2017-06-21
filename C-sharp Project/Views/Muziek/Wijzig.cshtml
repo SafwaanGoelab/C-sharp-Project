@@ -2,9 +2,11 @@
 @{
     ViewBag.Title = "Wijzig";
     Layout = "~/Views/Shared/_Layout.cshtml";
+ 
+    if (IsPost)
+    {
 
-    DataSet ds = Session["xmlDataSet"] as DataSet;
-
+    };
 }
 
 
@@ -38,7 +40,5 @@
             <td><input type="submit" value="Opslaan" /></td>
 
     </table>
-
-
 </form>
 

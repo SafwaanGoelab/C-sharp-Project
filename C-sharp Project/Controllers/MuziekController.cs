@@ -21,5 +21,9 @@ namespace C_sharp_Project.Controllers
         {
             return View();
         }
+        public ActionResult Wijzig()
+        {
+            return View();
+        }
     }
 }
