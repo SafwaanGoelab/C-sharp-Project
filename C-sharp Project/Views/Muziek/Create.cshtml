@@ -4,11 +4,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    if(IsPost)
+
+
+    if (IsPost)
     {
         DataSet ds = Session["xmlDataSet"] as DataSet;
 
-            DataRow dr = ds.Tables[0].NewRow();
+        DataRow dr = ds.Tables[0].NewRow();
 
 
         dr["id"] = Request.Form["id"];
@@ -26,10 +28,14 @@
     }
 
 }
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <form method="post">
     <form action="" method="post">
-        <table>
+        <table class="table">
             <tr>
                 <td>Id</td>
                 <td><input type="text" name="id" placeholder="Id" /></td>
