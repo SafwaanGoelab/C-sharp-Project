@@ -2,10 +2,25 @@
 @{
     ViewBag.Title = "Wijzig";
     Layout = "~/Views/Shared/_Layout.cshtml";
- 
+
+
+
+    DataSet ds = Session["xmlDataSet"] as DataSet;
+
+    string id = Request.QueryString["id"];
+    DataRow[] drArray = ds.Tables[0].Select("id='" + id + "'");
     if (IsPost)
     {
 
+
+        drArray[0]["id"] = Request.Form["id"];
+        drArray[0]["artist"] = Request.Form["artist"];
+        drArray[0]["title"] = Request.Form["title"];
+        drArray[0]["year"] = Request.Form["year"];
+        drArray[0]["genre"] = Request.Form["genre"];
+        drArray[0]["file"] = Request.Form["file"];
+
+        ds.WriteXml(Server.MapPath(@"..\App_Data\XMLFile1.xml"));
     };
 }
 
@@ -15,27 +30,27 @@
     <table>
         <tr>
             <td>Id</td>
-            <td><input type="text" name="id" placeholder="Id" /></td>
+            <td><input type="text" name="id" placeholder="Id" value="@drArray[0]["id"]" /></td>
         </tr>
         <tr>
             <td>Artist</td>
-            <td><input type="text" name="artist" placeholder="Artist" /></td>
+            <td><input type="text" name="artist" placeholder="Artist" value="@drArray[0]["artist"]"/></td>
         </tr>
         <tr>
             <td>Title</td>
-            <td><input type="text" name="title" placeholder="Title" /></td>
+            <td><input type="text" name="title" placeholder="Title" value="@drArray[0]["title"]" /></td>
         </tr>
         <tr>
             <td>Year</td>
-            <td><input type="text" name="year" placeholder="Year" /></td>
+            <td><input type="text" name="year" placeholder="Year" value="@drArray[0]["year"]"/></td>
         </tr>
         <tr>
             <td>Genre</td>
-            <td><input type="text" name="genre" placeholder="Genre" /></td>
+            <td><input type="text" name="genre" placeholder="Genre" value="@drArray[0]["genre"]"/></td>
         </tr>
         <tr>
             <td>File</td>
-            <td><input type="text" name="file" placeholder="File" /></td>
+            <td><input type="text" name="file" placeholder="File" value="@drArray[0]["file"]"/></td>
         </tr>
             <td><input type="submit" value="Opslaan" /></td>
 
