@@ -16,12 +16,4 @@
     <genre> Hiphop</genre>
     <file />
   </number>
-  <number>
-    <id>a</id>
-    <artist>b</artist>
-    <title>c</title>
-    <year>d</year>
-    <genre>e</genre>
-    <file>f</file>
-  </number>
 </music>
