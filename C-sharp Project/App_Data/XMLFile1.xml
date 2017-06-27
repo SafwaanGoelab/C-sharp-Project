@@ -16,4 +16,12 @@
     <genre> Hiphop</genre>
     <file />
   </number>
+  <number>
+    <id />
+    <artist />
+    <title />
+    <year />
+    <genre />
+    <file />
+  </number>
 </music>

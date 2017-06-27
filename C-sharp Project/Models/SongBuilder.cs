@@ -13,10 +13,14 @@ namespace C_sharp_Project.Models
 
             Song x = new Song()
             {
-                Id =  Convert.ToInt32(dr["id"]),
-                Artist = Convert.ToInt32(dr["artist"]),
-                Title = dr["title"].ToString()
-                Year = dr["year"].ToString()
+                Id =  (dr["id"] != DBNull.Value && dr["id"] != "" ? Convert.ToInt32(dr["id"]) : 0),
+                Artist = dr["artist"].ToString(),
+                Title = dr["title"].ToString(),
+                Year  = dr["year"].ToString(),
+                Genre = dr["genre"].ToString(),
+                File = dr["file"].ToString(),
+
+
             };
 
             return x;

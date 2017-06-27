@@ -10,7 +10,7 @@
     {
             DataRow[] drArray = ds.Tables[0].Select("id='" + id + "'");
             drArray[0].Delete();
-        ds.WriteXml(Server.MapPath(@"~/App_Data\XMLFile1.xml"));
+        ds.WriteXml(Server.MapPath(@"~/App_Data/XMLFile1.xml"));
         Response.Redirect("Index");
     }
 

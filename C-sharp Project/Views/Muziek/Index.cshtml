@@ -13,12 +13,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="container">
-<table class="table">
+<table class="table">   
     @foreach (Song s in Model)
     {
         <tr>
             <td>@s.Id</td>
+            <td>@s.Artist</td>
             <td>@s.Title</td>
+            <td>@s.Year</td>
+            <td>@s.Genre</td>
+            <td>@s.File</td>
             <td><a href="Delete?id=@s.Id">Verwijderen</a></td>
             <td><a href="Wijzig?id=@s.Id"> Wijzigen</a></td>
         </tr>

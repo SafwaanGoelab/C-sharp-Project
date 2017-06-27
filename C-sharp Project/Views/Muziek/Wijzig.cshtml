@@ -14,17 +14,17 @@
     if (IsPost)
     {
         DataRow[] drArray = ds.Tables[0].Select("id=" + id);
-
-        drArray[0]["id"] = Request.Form["id"];
+        
         drArray[0]["artist"] = Request.Form["artist"];
         drArray[0]["title"] = Request.Form["title"];
         drArray[0]["year"] = Request.Form["year"];
         drArray[0]["genre"] = Request.Form["genre"];
         drArray[0]["file"] = Request.Form["file"];
 
-        ds.WriteXml(Server.MapPath(@"..\App_Data\XMLFile1.xml"));
+        ds.WriteXml(Server.MapPath(@"~/App_Data/XMLFile1.xml"));
+        Response.Redirect("Index");
     };
-}
+}   
 @foreach (DataRow dr in form)
 {
 

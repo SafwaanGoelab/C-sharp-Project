@@ -22,7 +22,7 @@
 
         ds.Tables[0].Rows.Add(dr);
 
-        ds.WriteXml(Server.MapPath(@"..\App_Data\XMLFile1.xml"));
+        ds.WriteXml(Server.MapPath(@"~/App_Data/XMLFile1.xml"));
         Response.Redirect("Index");
  
     }
@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+<h2>Toevoegen</h2>
 <form method="post">
     <form action="" method="post">
         <table class="table">

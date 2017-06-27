@@ -34,7 +34,9 @@ namespace C_sharp_Project.Controllers
             dtSongs.Columns.Add(dcGenre);
             dtSongs.Columns.Add(dcFile);
 
-            ds.ReadXml(Server.MapPath(@"~/App_Data\XMLFile1.xml"));
+            ds.ReadXml(Server.MapPath(@"~/App_Data/XMLFile1.xml"));
+
+            Session["xmlDataSet"] = ds;
 
         }
         // GET: Muziek
@@ -57,14 +59,17 @@ namespace C_sharp_Project.Controllers
         }
         public ActionResult Create()
         {
+            DatasetInit();
             return View();
         }
         public ActionResult Delete()
         {
+            DatasetInit();
             return View();
         }
         public ActionResult Wijzig()
         {
+            DatasetInit();
             return View();
         }
     }
