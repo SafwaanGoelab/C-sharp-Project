@@ -1,32 +1,12 @@
 ﻿@using System.Data;
+@using C_sharp_Project.Models
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    DataSet ds = new DataSet("music");
+ 
 
-    DataTable dtSongs = new DataTable("number");
-
-    DataColumn dcId = new DataColumn("id");
-    DataColumn dcArtist = new DataColumn("artist");
-    DataColumn dcTitle = new DataColumn("title");
-    DataColumn dcYear = new DataColumn("year");
-    DataColumn dcGenre = new DataColumn("genre");
-    DataColumn dcFile = new DataColumn("file");
-
-
-
-    ds.Tables.Add(dtSongs);
-    dtSongs.Columns.Add(dcId);
-    dtSongs.Columns.Add(dcArtist);
-    dtSongs.Columns.Add(dcTitle);
-    dtSongs.Columns.Add(dcYear);
-    dtSongs.Columns.Add(dcGenre);
-    dtSongs.Columns.Add(dcFile);
-
-    ds.ReadXml(Server.MapPath(@"~/App_Data\XMLFile1.xml"));
-
-    Session["xmlDataSet"] = ds;
+    //Session["xmlDataSet"] = ds;
 }
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -34,19 +14,14 @@
 
 <div class="container">
 <table class="table">
-    @foreach (DataRow dr in ds.Tables[0].Rows)
+    @foreach (Song s in Model)
     {
         <tr>
-            <td>@dr["id"]</td>
-            <td>@dr["artist"]</td>
-            <td>@dr["title"]</td>
-            <td>@dr["year"]</td>
-            <td>@dr["genre"]</td>
-            <td>@dr["file"]</td>
-            <td><a href="Delete?id=@dr["id"]">Verwijderen</a></td>
-            <td><a href="Wijzig?id=@dr["id"]"> Wijzigen</a></td>
+            <td>@s.Id</td>
+            <td>@s.Title</td>
+            <td><a href="Delete?id=@s.Id">Verwijderen</a></td>
+            <td><a href="Wijzig?id=@s.Id"> Wijzigen</a></td>
         </tr>
-   
     }
 
 <h2>Index</h2>

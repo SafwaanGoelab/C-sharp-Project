@@ -23,8 +23,8 @@
         ds.Tables[0].Rows.Add(dr);
 
         ds.WriteXml(Server.MapPath(@"..\App_Data\XMLFile1.xml"));
-        //string waarde = Request.Form["naamInputVanElement"].ToString();
-
+        Response.Redirect("Index");
+ 
     }
 
 }
