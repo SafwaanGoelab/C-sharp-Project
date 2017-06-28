@@ -272,7 +272,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Muziek\Index.cshtml" />
-    <Content Include="Views\Manage\Create.cshtml" />
+    <Content Include="Views\Muziek\Create.cshtml" />
     <Content Include="Views\Muziek\Delete.cshtml" />
     <Content Include="Views\Muziek\Wijzig.cshtml" />
   </ItemGroup>
