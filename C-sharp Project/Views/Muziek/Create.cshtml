@@ -4,12 +4,11 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-
+    DataSet ds = Session["xmlDataSet"] as DataSet;
+    int i = ds.Tables[0].Rows.Count + 1;
 
     if (IsPost)
     {
-        DataSet ds = Session["xmlDataSet"] as DataSet;
-
         DataRow dr = ds.Tables[0].NewRow();
 
 
@@ -24,7 +23,7 @@
 
         ds.WriteXml(Server.MapPath(@"~/App_Data/XMLFile1.xml"));
         Response.Redirect("Index");
- 
+
     }
 
 }
@@ -38,7 +37,7 @@
         <table class="table">
             <tr>
                 <td>Id</td>
-                <td><input type="text" name="id" placeholder="Id" required/></td>
+                <td><input type="text" name="id" placeholder="Id" required readonly="readonly" value="@i"/></td>
             </tr>
             <tr>
                 <td>Artist</td>
