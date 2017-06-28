@@ -17,11 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("XML", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("XML", "Index", "Muziek", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Toevoegen", "Create", "Muziek")</li>
+                    <li>@Html.ActionLink("Toevoegen", "Create", "Muziek/Index")</li>
 
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -31,8 +31,21 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+ <style type="text/css">
+     #Footer{
+        position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+     }
+ </style>
+    </div>
+    <div id="Footer">
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Safwaan & Yannick</p>
         </footer>
     </div>
 
